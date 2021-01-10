@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>In task component!</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form>
+        <div class="mb-3">
+          <label for="userName" class="form-label">User Name</label>
+          <input (input)="onHandleChangeUserNameInput()" [(ngModel)]="userName"
+                 type="text" class="form-control"
+                 name="userName" id="userName"
+                 placeholder="put the user name"/>
+          <div class="form-text">
+            <p>
+              {{userName}}
+            </p>
+          </div>
+        </div>
+        <button [disabled]="!showResetUserNameButton" (click)="onHandleClick()" class="btn btn-primary">Reset
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

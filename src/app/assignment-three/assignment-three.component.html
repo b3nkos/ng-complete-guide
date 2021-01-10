@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center fs-1 mt-3 text-primary">Assignment Three</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form>
+        <button (click)="onHandleClick()" class="btn btn-primary">
+          Display Details
+        </button>
+        <hr>
+        <div class="form-text" *ngIf="showParagraph">
+          <p>
+            Secret Password = tuna
+          </p>
+        </div>
+      </form>
+
+      <table class="table" *ngIf="logs.length > 0">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Data</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let log of logs">
+          <th scope="row">{{log.id}}</th>
+          <td [ngClass]="{'background-color-black': log.id >= 5}">{{log.data}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
