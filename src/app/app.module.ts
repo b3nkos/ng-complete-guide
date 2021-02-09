@@ -7,6 +7,8 @@ import {SuccessAlertComponent} from './success-alert/success-alert.component';
 import {FormsModule} from '@angular/forms';
 import {TaskComponent} from './task/task.component';
 import {AssignmentThreeComponent} from './assignment-three/assignment-three.component';
+import { CockpitComponent } from './cockpit/cockpit.component';
+import { ServerElementComponent } from './server-element/server-element.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import {AssignmentThreeComponent} from './assignment-three/assignment-three.comp
     WarningAlertComponent,
     SuccessAlertComponent,
     TaskComponent,
-    AssignmentThreeComponent
+    AssignmentThreeComponent,
+    CockpitComponent,
+    ServerElementComponent
   ],
   imports: [
     BrowserModule,
