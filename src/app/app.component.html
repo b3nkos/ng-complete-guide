@@ -1,3 +1,15 @@
-<!--<app-task></app-task>-->
-<!--<app-assigment-three></app-assigment-three>-->
-<h3>I'm in the AppComponent!</h3>
+<div class="container">
+  <app-cockpit
+    (serverCreated)="onServerAdded($event)"
+    (blueprintCreated)="onBlueprintAdded($event)"
+  ></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-element
+        *ngFor="let element of serverElements"
+        [serverElement]="element"
+      ></app-server-element>
+    </div>
+  </div>
+</div>
