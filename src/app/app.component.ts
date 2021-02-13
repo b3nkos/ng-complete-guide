@@ -6,6 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title: string;
   serverElements = [
     {
       type: 'server',
@@ -28,5 +29,13 @@ export class AppComponent {
       name: serverData.serverName,
       content: serverData.serverContent
     });
+  }
+
+  onChangeFirst(): void {
+    this.serverElements[0].name = 'Changed!';
+  }
+
+  onDestroyFirst(): void {
+    this.serverElements.splice(0, 1);
   }
 }
