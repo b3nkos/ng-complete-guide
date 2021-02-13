@@ -1,28 +1,14 @@
 <div class="container">
-  <app-cockpit
-    (serverCreated)="onServerAdded($event)"
-    (blueprintCreated)="onBlueprintAdded($event)"
-  ></app-cockpit>
-  <hr>
+  <app-game-control (numberGenerated)="onHandleNumberGenerated($event)">
+  </app-game-control>
   <div class="row">
-    <div class="col-xs-12">
-      <button class="btn btn-default" (click)="onChangeFirst()">
-        Change first Element
-      </button>
-      <button class="btn btn-danger" (click)="onDestroyFirst()">
-        Destroy first Element
-      </button>
-      <app-server-element
-        *ngFor="let element of serverElements"
-        [serverElement]="element"
-        [name]="element.name">
-        <p #contentParagraph>
-          <strong *ngIf="element.type === 'server'" style="color:red">
-            {{element.content}}
-          </strong>
-          <em *ngIf="element.type === 'blueprint'">{{element.content}}</em>
-        </p>
-      </app-server-element>
+    <div class="col-xs-6">
+      <h1>Even numbers</h1>
+      <app-even *ngFor="let evenNumber of evenNumbers" [evenNumberInput]="evenNumber"></app-even>
+    </div>
+    <div class="col-xs-6">
+      <h1>Odd numbers</h1>
+      <app-odd *ngFor="let oddNumber of oddNumbers" [oddNumberInput]="oddNumber"></app-odd>
     </div>
   </div>
 </div>

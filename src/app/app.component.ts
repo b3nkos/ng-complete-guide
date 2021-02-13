@@ -15,6 +15,17 @@ export class AppComponent {
     }
   ];
 
+  evenNumbers: number[] = [];
+  oddNumbers: number[] = [];
+
+  onHandleNumberGenerated(numberGenerated: number ): void {
+    if (numberGenerated % 2 === 0) {
+      this.evenNumbers.push(numberGenerated);
+    } else {
+      this.oddNumbers.push(numberGenerated);
+    }
+  }
+
   onServerAdded(serverData: { serverName: string, serverContent: string }): void {
     this.serverElements.push({
       type: 'server',
