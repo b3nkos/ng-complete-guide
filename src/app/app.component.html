@@ -2,7 +2,11 @@
   <div class="row">
     <div class="col-xs-12">
       <h1 appBasicHighlight>This is an example with a directive</h1>
-      <h1 appBetterHighlight>This is an example with a better directive</h1>
+      <h1 appBetterHighlight
+          [defaultColor]="'yellow'"
+          highlightColor="peru">
+        This is an example with a better directive
+      </h1>
     </div>
   </div>
 </div>
