@@ -1,14 +1,8 @@
 <div class="container">
-  <app-game-control (numberGenerated)="onHandleNumberGenerated($event)">
-  </app-game-control>
   <div class="row">
-    <div class="col-xs-6">
-      <h1>Even numbers</h1>
-      <app-even *ngFor="let evenNumber of evenNumbers" [evenNumberInput]="evenNumber"></app-even>
-    </div>
-    <div class="col-xs-6">
-      <h1>Odd numbers</h1>
-      <app-odd *ngFor="let oddNumber of oddNumbers" [oddNumberInput]="oddNumber"></app-odd>
+    <div class="col-xs-12">
+      <h1 appBasicHighlight>This is an example with a directive</h1>
+      <h1 appBetterHighlight>This is an example with a better directive</h1>
     </div>
   </div>
 </div>
