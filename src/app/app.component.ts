@@ -1,53 +1,18 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AccountsService} from './accounts.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title: string;
-  value = 100;
-  serverElements = [
-    {
-      type: 'server',
-      name: 'Test Name of server',
-      content: 'Text description of server'
-    }
-  ];
+export class AppComponent implements OnInit {
+  accounts: { name: string, status: string }[] = [];
 
-  evenNumbers: number[] = [];
-  oddNumbers: number[] = [];
-
-  onHandleNumberGenerated(numberGenerated: number ): void {
-    if (numberGenerated % 2 === 0) {
-      this.evenNumbers.push(numberGenerated);
-    } else {
-      this.oddNumbers.push(numberGenerated);
-    }
+  constructor(private accountsService: AccountsService) {
   }
 
-  onServerAdded(serverData: { serverName: string, serverContent: string }): void {
-    this.serverElements.push({
-      type: 'server',
-      name: serverData.serverName,
-      content: serverData.serverContent
-    });
-  }
-
-  onBlueprintAdded(serverData: { serverName: string, serverContent: string }): void {
-    this.serverElements.push({
-      type: 'blueprint',
-      name: serverData.serverName,
-      content: serverData.serverContent
-    });
-  }
-
-  onChangeFirst(): void {
-    this.serverElements[0].name = 'Changed!';
-  }
-
-  onDestroyFirst(): void {
-    this.serverElements.splice(0, 1);
+  ngOnInit(): void {
+    this.accounts = this.accountsService.accounts;
   }
 }
